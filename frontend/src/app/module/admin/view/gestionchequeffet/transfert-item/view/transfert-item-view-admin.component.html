@@ -1,0 +1,44 @@
+
+<p-dialog [(visible)]="viewDialog" [style]="{width: '70vw'}" header="{{'transfertItem.tabPan' | translate}}" [modal]="true" styleClass="p-fluid">
+    <ng-template pTemplate="content">
+        <p-tabView>
+            <p-tabPanel header="{{'transfertItem.tabPan' | translate}}">
+                <div class="grid">
+                    <div class="field col-12 md:col-6">
+                        <label for="1">{{'transfertItem.fromDepot' | translate}}</label>
+                        <input class="mb-2 mr-2" type="text" pInputText [disabled]="true" placeholder="{{'transfertItem.fromDepot' | translate}}" autofocus  id="1" [(ngModel)]="item.fromDepot.libelle">
+                    </div>
+                    <div class="field col-12 md:col-6">
+                        <label for="2">{{'transfertItem.toDepot' | translate}}</label>
+                        <input class="mb-2 mr-2" type="text" pInputText [disabled]="true" placeholder="{{'transfertItem.toDepot' | translate}}" autofocus  id="2" [(ngModel)]="item.toDepot.libelle">
+                    </div>
+                    <div class="field col-12 md:col-6">
+                        <label for="3">{{'transfertItem.produit' | translate}}</label>
+                        <input class="mb-2 mr-2" type="text" pInputText [disabled]="true" placeholder="{{'transfertItem.produit' | translate}}" autofocus  id="3" [(ngModel)]="item.produit.designation">
+                    </div>
+                    <div class="field col-12 md:col-6">
+                        <label for="4">{{'transfertItem.quantite' | translate}}</label>
+                        <p-inputNumber class="mb-2 mr-2" id="4" [disabled]="true" placeholder="{{'transfertItem.quantite' | translate}}" [(ngModel)]="item.quantite"></p-inputNumber>
+                    </div>
+                    <div class="field col-12 md:col-6">
+                        <label for="5">{{'transfertItem.transfert' | translate}}</label>
+                        <input class="mb-2 mr-2" type="text" pInputText [disabled]="true" placeholder="{{'transfertItem.transfert' | translate}}" autofocus  id="5" [(ngModel)]="item.transfert.id">
+                    </div>
+                </div>
+            </p-tabPanel>
+
+        </p-tabView>
+
+    </ng-template>
+
+    <ng-template pTemplate="footer" >
+        <div class="grid-footer">
+            <div>
+                <button pButton pRipple label="Annuler" icon="pi pi-times" class="p-button-outlined" (click)="hideViewDialog()"></button>
+            </div>
+        </div>
+    </ng-template>
+</p-dialog>
+
+
+
